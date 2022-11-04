@@ -1,39 +1,23 @@
-let display = document.getElementById("buttondisplay");
+//defining display and buttons
 
-let buttons = document.querySelectorAll(".button");
+let display = document.getElementById("buttondisplay")
+let buttons = document.querySelectorAll(".button")
+// let keyboardInput = document.getElementById('keyboard-input');
 
-document.addEventListener("keydown", (event) => {
-    document.body.append(event.key);
-    if (event.key == "0") {document.body.append("0")}
-    if (event.key == "1") {document.body.append(1)}
-    if (event.key == "2") {document.body.append("2")}
-    if (event.key == "3") {document.body.append("3")}
-    if (event.key == "4") {document.body.append("4")}
-    if (event.key == "5") {document.body.append("5")}
-    if (event.key == "6") {document.body.append("6")}
-    if (event.key == "7") {document.body.append("7")}
-    if (event.key == "8") {document.body.append("8")}
-    if (event.key == "9") {document.body.append("8")}
-    if (event.key == "+") {document.body.append("+")}
-    if (event.key == "-") {document.body.append("-")}
-    if (event.key == "*") {document.body.append("*")}
-    if (event.key == "/") {document.body.append("/")}
-
-
-});
-
-
-
-
+//for loop, buttons array
 for (let button of buttons) {
-    button.addEventListener("click", function (event) {
+    button.addEventListener("click", function (event) {     //event called click
+
         switch (event.target.textContent) {
+
             case "C":
                 display.textContent = "";
                 break;
+
             case "=":
                 display.textContent = eval(display.textContent); 
                 break;   
+
             default:
             display.textContent += event.target.textContent;
         }
@@ -42,6 +26,70 @@ for (let button of buttons) {
 
 
 
+document.addEventListener("keypress", (event) => {
+    console.log(event);
+
+    switch (event.key) {
+
+        case "C":
+            display.textContent = "";
+            break;
+        case "=":
+            display.textContent = eval(display.textContent); 
+            break; 
+        case "Enter":
+            display.textContent = eval(display.textContent);
+            break;
+
+        default:
+        display.textContent += event.key;
+    }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+// document.onkeyup = e => {
+//     if(e.key == "0" || e.key == "Num0"){
+//         type_to(0);
+//     } 
+//     else if (e.key == "1" || e.key == "Num1"){
+//         type_to(1);
+//     }
+//     else if (e.key == "2" || e.key == "Num2"){
+//         type_to(2);
+//     }
+//     else if (e.key == "3" || e.key == "Num3"){
+//         type_to(3);
+//     }
+//     else if (e.key == "4" || e.key == "Num4"){
+//         type_to(4);
+//     }
+//     else if (e.key == "5" || e.key == "Num5"){
+//         type_to(5);
+//     }
+//     else if (e.key == "6" || e.key == "Num6"){
+//         type_to(6);
+//     }
+//     else if (e.key == "7" || e.key == "Num7"){
+//         type_to(7);
+//     }
+//     else if (e.key == "8" || e.key == "Num8"){
+//         type_to(8);
+//     }
+//     else if (e.key == "9" || e.key == "Num9"){
+//         type_to(9);
+//     }
+// }
 
 
 
@@ -63,13 +111,6 @@ for (let button of buttons) {
 
 
 
-/*calculationResult = eval("result");
-
-equalbutton.addEventListener("click", function() {
-const calculationResult = eval(result)
-display.textContent = calculationResult
-});
-*/
 
 
 
@@ -89,16 +130,37 @@ display.textContent = calculationResult
 
 
 
-/*let buttons = Array.from(document.getElementsByClassName("button"));
 
-buttons.map( button => {
-    button.addEventListener("click", (event) => {
-        console.log("click");
-        console.log(event);
-        console.log(event.target);
-        console.log(event.target.textContent);
-    });
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 buttons.map( button => {
     button.addEventListener("click", (event) => {
