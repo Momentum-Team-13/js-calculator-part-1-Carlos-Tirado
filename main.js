@@ -2,7 +2,8 @@
 
 let display = document.getElementById("buttondisplay")
 let buttons = document.querySelectorAll(".button")
-// let keyboardInput = document.getElementById('keyboard-input');
+
+
 
 //for loop, buttons array
 for (let button of buttons) {
@@ -25,18 +26,29 @@ for (let button of buttons) {
 };
 
 
-
-document.addEventListener("keypress", (event) => {
+document.addEventListener("keydown", (event) => { //keydown event
     console.log(event);
 
     switch (event.key) {
+        
+        case "ArrowUp": case "ArrowDown": case "ArrowLeft": case "ArrowRight": case "a": case "b": case "c":
+        case "d": case "e": case "f": case "g": case "h": case "i": case "j": case "k": case "l": case "m":
+        case "n": case "o": case "p": case "q": case "r": case "s": case "t": case "u": case "v": case "w":
+        case "x": case "y": case "z":
+        case "tab": case "CapsLock": case "Shift": case "Control": case "Alt": case "Meta": case "Tab":
+        case "`": case "~": case "_": case "^": case "&": case "#": case "@": case "!": case "?": case "{":
+        case "}": case "[": case "]": case "|": case "\\": case ":": case ";": case "'": case '"':
+        break;
 
         case "C":
+        case "Backspace":
             display.textContent = "";
             break;
+
         case "=":
             display.textContent = eval(display.textContent); 
             break; 
+            
         case "Enter":
             display.textContent = eval(display.textContent);
             break;
@@ -44,52 +56,20 @@ document.addEventListener("keypress", (event) => {
         default:
         display.textContent += event.key;
     }
+});
 
-})
+// TOD0
 
-
-
-
-
-
+// LIMITAR NUMERO DE CARACTERES EN DISPLAY OUTPUT.
+// desabilitar teclado (a-z) short way
 
 
 
 
 
 
-// document.onkeyup = e => {
-//     if(e.key == "0" || e.key == "Num0"){
-//         type_to(0);
-//     } 
-//     else if (e.key == "1" || e.key == "Num1"){
-//         type_to(1);
-//     }
-//     else if (e.key == "2" || e.key == "Num2"){
-//         type_to(2);
-//     }
-//     else if (e.key == "3" || e.key == "Num3"){
-//         type_to(3);
-//     }
-//     else if (e.key == "4" || e.key == "Num4"){
-//         type_to(4);
-//     }
-//     else if (e.key == "5" || e.key == "Num5"){
-//         type_to(5);
-//     }
-//     else if (e.key == "6" || e.key == "Num6"){
-//         type_to(6);
-//     }
-//     else if (e.key == "7" || e.key == "Num7"){
-//         type_to(7);
-//     }
-//     else if (e.key == "8" || e.key == "Num8"){
-//         type_to(8);
-//     }
-//     else if (e.key == "9" || e.key == "Num9"){
-//         type_to(9);
-//     }
-// }
+
+
 
 
 
