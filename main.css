@@ -1,30 +1,15 @@
-
-
-
 .display {
     display:inline-block;
     text-align: center;
     padding-right: 300px;
 }
 
-/* .container {
-    width: 408px;
-    margin: 50px;
-    text-align: center;
-    position: absolute;
-    background-color: #87CEEB;
-    box-shadow: 0px 0px 0px 10px rgb(150, 150, 150);
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    height: 64vh;
-} */
+
 .container {
     max-width: 400px;
-    margin: 10vh auto 0 auto;
+    margin: 15vh auto 0 auto;
     box-shadow: 0px 0px 43px 17px rgba(153, 153, 153, 1);
     text-align: center;
-
 }
 
 .buttons {
@@ -36,19 +21,20 @@
     width: 100px;
     height: 100px;
     background-color: #1e293b;
+    /* background-color: #4CAF50; */
     border: 1px solid wheat;
     /* padding-right: 23px; */
     font-size: 500%;
     color: #fafafa;
-    
-
 } 
+
 #buttonC {
     width: 100px;
     height: 100px;
     background-color: #1e293b;
+    /* background-color: #4CAF50; */
     border: 1px solid wheat;
-    margin-left: -69px;
+    margin-left: 0px;
     font-size: 500%;
     color: #fafafa;
     text-align: center;
@@ -56,20 +42,37 @@
 
 
 
-#buttondisplay {
-    width: 355px;
+/* #buttondisplay {
+    width: 285px;
     height: 100px;
     background-color: gray;
     padding-right: 20px;
     padding-bottom: 2px;
-    font-size: 300%;
-    color: aqua;
+    font-size: 250%;
+    color: wheat;
     display: inline-block;
     text-align: center;
     
+} */
+
+output {
+    width: 285px;
+    height: 100px;
+    background-color: black;
+    padding-right: 20px;
+    padding-bottom: 2px;
+    font-size: 250%;
+    color: wheat;
+    display: inline;
+    text-align: center;
+    /* overflow:hidden;  */
+    overflow-x: scroll;
+    
 }
 
-
+/* .overflow-visible{
+    white-space: initial;
+} */
 
 .highlight {
     border: 5px aqua;

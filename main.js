@@ -7,8 +7,8 @@ let buttons = document.querySelectorAll(".button")
 
 //for loop, buttons array
 for (let button of buttons) {
-    button.addEventListener("click", function (event) {     //event called click
-
+    button.addEventListener("click", function (event) {     //event called click  (PointerEvent) 
+        console.log(event);
         switch (event.target.textContent) {
 
             case "C":
@@ -16,7 +16,11 @@ for (let button of buttons) {
                 break;
 
             case "=":
-                display.textContent = eval(display.textContent); 
+                try{ //using try catch block to display error message when I click some nonsense operation
+                display.textContent = [eval(display.textContent).toFixed(3)]; //toFixed method redondea los digitos
+            } catch {
+                display.textContent = "Error!"
+            } 
                 break;   
 
             default:
@@ -26,12 +30,11 @@ for (let button of buttons) {
 };
 
 
-document.addEventListener("keydown", (event) => { //keydown event
+document.addEventListener("keydown", (event) => { //keydown event (KeyboardEvent)
     console.log(event);
-
     switch (event.key) {
         
-        case "ArrowUp": case "ArrowDown": case "ArrowLeft": case "ArrowRight": case "a": case "b": case "c":
+        case "ArrowUp": case "ArrowDown": case "ArrowRight": case "a": case "b": case "c":
         case "d": case "e": case "f": case "g": case "h": case "i": case "j": case "k": case "l": case "m":
         case "n": case "o": case "p": case "q": case "r": case "s": case "t": case "u": case "v": case "w":
         case "x": case "y": case "z":
@@ -40,13 +43,21 @@ document.addEventListener("keydown", (event) => { //keydown event
         case "}": case "[": case "]": case "|": case "\\": case ":": case ";": case "'": case '"':
         break;
 
+
         case "C":
         case "Backspace":
             display.textContent = "";
             break;
+        case "ArrowLeft":
+                display.textContent = display.textContent.slice(0, -1); //to delete digit by digit
+            break;
 
         case "=":
-            display.textContent = eval(display.textContent); 
+            try{ //using try catch block to display error message when I click some nonsense operation
+            display.textContent = [eval(display.textContent).toFixed(3)]; //toFixed method redondea los digitos
+        } catch {
+            display.textContent = "Error!";
+        } 
             break; 
             
         case "Enter":
@@ -58,6 +69,8 @@ document.addEventListener("keydown", (event) => { //keydown event
     }
 });
 
+
+
 // TOD0
 
 // LIMITAR NUMERO DE CARACTERES EN DISPLAY OUTPUT.
@@ -67,89 +80,14 @@ document.addEventListener("keydown", (event) => { //keydown event
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-buttons.map( button => {
-    button.addEventListener("click", (event) => {
-        switch (event.target.textContent){
-            default:
-                display.textContent += event.target.textContent;
-        }
-    });
-    });*/
+// buttons.map( button => {
+//     button.addEventListener("click", (event) => {
+//         switch (event.target.textContent){
+//             default:
+//                 display.textContent += event.target.textContent;
+//         }
+//     });
+//     });
 
 
 
